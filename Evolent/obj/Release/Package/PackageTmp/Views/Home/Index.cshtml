@@ -1,0 +1,48 @@
+﻿@model  List<Evolent.Models.Contact>
+<div class="row">
+    <p><img src="~/Content/EvolentLogo.jpg" alt="Evolent Contacts" height="5%" width="100%" background-color="lightblue" /></p>
+</div>
+
+<h1>Evolent Contacts List</h1>
+<div class="row">
+
+    <div class="table-responsive">
+        <table class="table">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Status</th>
+                <th> </th>
+                <th> </th>
+            </tr>
+            @{
+                if (Model != null && Model.Count >= 1)
+                {
+
+                    foreach (Evolent.Models.Contact data in Model)
+                    {
+
+                        <tr class="left">
+                            <td>@data.FirstName @data.LastName</td>
+                            <td>@data.Email</td>
+                            <td>@data.Phone</td>
+                            <td>
+                                @{if (data.IsActive == true)
+                                    {
+                                        <text>Active</text>}
+                                    else
+                                    {
+                                        <text> Not Active</text>
+                                    }
+                                }
+                            </td>
+                            <td>@Html.ActionLink("Edit", "Edit", "Home", new { contactId = @data.Id }, null)</td>
+                            <td> @Html.ActionLink("Delete", "Delete", "Home", new { contactId = @data.Id }, null)</td>
+                        </tr>
+                                        }
+                                    }
+            }
+        </table>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EvolentDBModelStoreContainer" CdmEntityContainer="EvolentDBEntities">
+    <FunctionImportMapping FunctionImportName="CreateContact" FunctionName="EvolentDBModel.Store.CreateContact" />
+    <FunctionImportMapping FunctionImportName="DeleteContact" FunctionName="EvolentDBModel.Store.DeleteContact" />
+    <FunctionImportMapping FunctionImportName="GetAllContacts" FunctionName="EvolentDBModel.Store.GetAllContacts">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EvolentDBModel.GetAllContacts_Result">
+          <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetContact" FunctionName="EvolentDBModel.Store.GetContact">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EvolentDBModel.GetContact_Result">
+          <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UpdateContact" FunctionName="EvolentDBModel.Store.UpdateContact" />
+  </EntityContainerMapping>
+</Mapping>
